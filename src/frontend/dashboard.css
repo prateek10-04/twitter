@@ -2,64 +2,37 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    box-sizing: border-box; /* Include padding and border in the width and height */
 }
 
 header {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
     color: #1da1f2; /* Twitter blue color */
+    margin-bottom: 10px; /* Add margin at the bottom of the title */
 }
+
+
 
 .post-button {
-    float: left;
-    margin-top: -60px; /* Adjust as needed to align with the header */
-    margin-left: 20px;
-    color: white;
-    background-color: #1da1f2; /* Twitter blue color */
-    width: 60px;
-    height: 40px;
+    order: -1; /* Move the post button to the top in mobile view */
 }
 
-.logout-button {
-    float: right;
-    margin-top: -60px; /* Adjust as needed to align with the header */
-    margin-right: 20px;
-    color: white;
-    background-color: #1da1f2; /* Twitter blue color */
-    width: 70px;
-    height: 40px;
-}
-/* Add styles for the profile button */
-/* Add styles for the profile button */
+.post-button,
+.logout-button,
 .profile-button {
-    float: right;
-    margin-top: -50px;
-    margin-right: 550px; /* Adjusted margin for fitting */
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #1da1f2; /* Twitter blue color */
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    font-size: 14px; /* Adjust font size as needed */
+    width: 10%; /* Adjust the percentage as needed */
+    margin: 0 45%; /* Add margin on both sides to prevent buttons from sticking to the edges */
+    margin-top: 10px;
+    box-sizing: border-box;
+    background-color: #1da1f2;
+    color: white;
 }
-
-/* Add styles for the text inside the profile button */
-.profile-button span {
-    display: none; /* Hide the text by default */
-}
-
-/* Show the text on hover */
-.profile-button:hover span {
-    display: inline;
-}
-
 
 
 .tweet-box {
