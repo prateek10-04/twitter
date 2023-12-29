@@ -1,0 +1,40 @@
+/* Enhanced styling for the Twitter Clone */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    color: #1da1f2; /* Twitter blue color */
+}
+
+.buttons-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.tweet-box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px; /* Add margin at the top of each tweet box */
+}
+
+.tweet-author {
+    font-weight: bold;
+}
+
+.tweet-date {
+    color: #777;
+}
+
+button {
+    margin-right: 10px;
+    color: white;
+    background-color: black;
+}

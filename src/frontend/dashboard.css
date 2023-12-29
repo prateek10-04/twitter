@@ -1,0 +1,102 @@
+/* Enhanced styling for the Twitter Clone Dashboard */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    color: #1da1f2; /* Twitter blue color */
+}
+
+.post-button {
+    float: left;
+    margin-top: -60px; /* Adjust as needed to align with the header */
+    margin-left: 20px;
+    color: white;
+    background-color: #1da1f2; /* Twitter blue color */
+    width: 60px;
+    height: 40px;
+}
+
+.logout-button {
+    float: right;
+    margin-top: -60px; /* Adjust as needed to align with the header */
+    margin-right: 20px;
+    color: white;
+    background-color: #1da1f2; /* Twitter blue color */
+    width: 70px;
+    height: 40px;
+}
+/* Add styles for the profile button */
+/* Add styles for the profile button */
+.profile-button {
+    float: right;
+    margin-top: -50px;
+    margin-right: 550px; /* Adjusted margin for fitting */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #1da1f2; /* Twitter blue color */
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 14px; /* Adjust font size as needed */
+}
+
+/* Add styles for the text inside the profile button */
+.profile-button span {
+    display: none; /* Hide the text by default */
+}
+
+/* Show the text on hover */
+.profile-button:hover span {
+    display: inline;
+}
+
+
+
+.tweet-box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px; /* Add margin at the top of each tweet box */
+    position: relative; /* Position relative for absolute positioning of buttons */
+}
+
+.tweet-author {
+    font-weight: bold;
+}
+
+.tweet-date {
+    color: #777;
+}
+
+.update-button,
+.delete-button {
+    position: absolute;
+    top: 10px; /* Position buttons at the top */
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update-button {
+    right: 70px; /* Adjust as needed to position the "Update" button */
+    background-color: green;
+}
+
+.delete-button {
+    right: 10px; /* Position the "Delete" button to the right of the "Update" button */
+    background-color: red;
+}
