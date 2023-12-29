@@ -27,7 +27,7 @@ h1 {
 .logout-button,
 .profile-button {
     width: 30%; /* Adjust the percentage as needed */
-    margin: 0 45%; /* Add margin on both sides to prevent buttons from sticking to the edges */
+    margin: 0 35%; /* Add margin on both sides to prevent buttons from sticking to the edges */
     margin-top: 10px;
     box-sizing: border-box;
     background-color: #1da1f2;
