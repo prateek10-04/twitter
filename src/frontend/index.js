@@ -40,5 +40,30 @@ document.getElementById('login-btn').addEventListener('click', () => {
     window.location.href = 'login.html';
 });
 
+
+
+
+document.getElementById('google-btn').addEventListener('click', async () => {
+    localStorage.setItem('google_sign',true)
+    // Redirect to the login page
+   window.location.href='/auth/google'
+   
+});
+
 // Load tweets when the page loads
-document.addEventListener('DOMContentLoaded', displayTweets);
+document.addEventListener('DOMContentLoaded',async()=>{
+    displayTweets()
+    localStorage.setItem('google_sign',false)
+    
+    const response = await fetch('/failed');
+    if(response.ok){
+        const data = await response.json()
+        console.log(data)
+        if(data.message){
+        const confirmation = window.confirm(data.message);
+        }
+    }
+});
+
+
+
