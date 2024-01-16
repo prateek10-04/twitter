@@ -3,7 +3,6 @@ const User = require('../models/user')
 const Tweet = require('../models/tweet')
 const router = new express.Router()
 const auth = require('../auth/auth')
-require('dotenv').config()
 const session=require('express-session')
 var userProfile=null
 var token1=null
