@@ -58,6 +58,18 @@ async function displayTweets() {
         console.error('Error fetching tweets:', error.message);
     }
 }
+async function setlocal(){
+   try {const response = await fetch('/success');
+    if(response.ok){
+        const data = await response.json()
+        console.log(data)
+        if(data.token1){localStorage.setItem('authToken',data.token1)}
+    }}
+    catch(e){console.log(e)}
+    
+}
+
+
 
 // Event listener for the Post button
 document.getElementById('post-button').addEventListener('click', () => {
@@ -109,6 +121,7 @@ async function performLogout(){
 
 // Load tweets and welcome message when the page loads
 document.addEventListener('DOMContentLoaded', async () => {
+    if(localStorage.getItem('google_sign'))await setlocal()
     await displayTweets();
 });
 
