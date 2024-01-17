@@ -122,7 +122,7 @@ router.use(session({
     secret: 'mysecret',
     resave:false,
     saveUninitialized:true,
-    cookie:{secure:false}
+    cookie:{secure:true}
 }))
 
 router.use(passport.initialize())
