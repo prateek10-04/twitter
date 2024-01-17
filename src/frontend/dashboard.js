@@ -64,6 +64,8 @@ async function setlocal(){
         const data = await response.json()
         console.log(data)
         if(data.token1){localStorage.setItem('authToken',data.token1)}
+        localStorage.setItem('google_sign',false)
+
     }}
     catch(e){console.log(e)}
     
