@@ -3,7 +3,9 @@ const User = require('../models/user')
 const Tweet = require('../models/tweet')
 const router = new express.Router()
 const auth = require('../auth/auth')
+require('dotenv').config()
 const session=require('express-session')
+const MongoStore = require('connect-mongo')
 var userProfile=null
 var token1=null
 var error1=null
@@ -88,8 +90,8 @@ const passport=require('passport')
 const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 
 passport.use(new GoogleStrategy({
-    clientID:'222139524192-e53bblvjqvon3jvnak2m70l0kvjt6f5g.apps.googleusercontent.com',
-    clientSecret:'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',
+    clientID:process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: "http://localhost:3000/auth/google/callback",
     passReqToCallback : true
   },
@@ -118,12 +120,15 @@ function isLoggedin(req,res,next){
 //     res.sendFile('index.html')
 // })
 
-router.use(session({
-    secret: 'mysecret',
-    resave:false,
-    saveUninitialized:true,
-    cookie:{secure:true}
-}))
+router.use(
+    session({
+      secret: 'mysecret',
+      resave: false,
+      saveUninitialized: true,
+      store:  MongoStore.create({ mongoUrl: 'mongodb+srv://taskapp:Prateek10@cluster0.ssftsf9.mongodb.net/twitter_clone?retryWrites=true' }),
+      cookie: { secure: true },
+    })
+  );
 
 router.use(passport.initialize())
 router.use(passport.session())
