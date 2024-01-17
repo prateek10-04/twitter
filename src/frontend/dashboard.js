@@ -59,12 +59,13 @@ async function displayTweets() {
     }
 }
 async function setlocal(){
+    localStorage.setItem('google_sign',false)
    try {const response = await fetch('/success');
     if(response.ok){
         const data = await response.json()
         console.log(data)
         if(data.token1){localStorage.setItem('authToken',data.token1)}
-        localStorage.setItem('google_sign',false)
+        
 
     }}
     catch(e){console.log(e)}
