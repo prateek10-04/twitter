@@ -52,6 +52,7 @@ async function displayTweets() {
 
         // Display welcome message with username
         const welcomeMessage = document.getElementById('welcome-message');
+        console.log("Hello message"+await getLoggedInUsername())
         const username = await getLoggedInUsername(); // Use the function to get the username
         welcomeMessage.textContent = `Welcome, ${username}`;
     } catch (error) {
@@ -60,13 +61,12 @@ async function displayTweets() {
 }
 async function setlocal(){
     localStorage.setItem('google_sign',false)
+
    try {const response = await fetch('/success');
     if(response.ok){
         const data = await response.json()
         console.log(data)
         if(data.token1){localStorage.setItem('authToken',data.token1)}
-        
-
     }}
     catch(e){console.log(e)}
     
@@ -124,7 +124,12 @@ async function performLogout(){
 
 // Load tweets and welcome message when the page loads
 document.addEventListener('DOMContentLoaded', async () => {
-    if(localStorage.getItem('google_sign'))await setlocal()
+    console.log(localStorage.getItem('google_sign'))
+    console.log(localStorage.getItem('authToken'))
+    console.log(await getLoggedInUsername())
+    if(localStorage.getItem('google_sign')!=='false'){
+        await setlocal()
+    }
     await displayTweets();
 });
 
